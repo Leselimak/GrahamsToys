@@ -9,11 +9,14 @@ public class movement : MonoBehaviour
     float Speed = 15f; // movement speed float. This number can be anything but 15 seems to work well for the purpose of this assignment.
 
     Rigidbody2D playerRB; // referencing the Rigidbody and declaring that it is going to be used in a variable called "playerRB".
-
+    private SpriteRenderer grahamSprite;
+    private Animator grahamAnim;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>(); // accessing the Rigidbody on the player.
+        grahamSprite = GetComponent<SpriteRenderer>();
+        grahamAnim = GetComponent<Animator>();
     }
 
     void KeyboardInput()
@@ -21,6 +24,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             aPressed = true;
+            grahamSprite.flipX = true;
         }
         else
         {
@@ -37,6 +41,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             dPressed = true;
+            grahamSprite.flipX = false;
         }
         else
         {
@@ -86,6 +91,30 @@ public class movement : MonoBehaviour
         if (spacePressed)
         {
             transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
+            grahamAnim.SetBool("isJumping", true);
+        }
+        else
+        {
+            grahamAnim.SetBool("isJumping", false);
+        }
+
+        if (!aPressed && !dPressed && !spacePressed && !sPressed)
+            
+        {
+            grahamAnim.SetBool("isIdle", true);
+        }
+        else
+        {
+            grahamAnim.SetBool("isIdle", false);
+        }
+
+        if(aPressed || dPressed)
+        {
+            grahamAnim.SetBool("isRunning", true);
+        }
+        else
+        {
+            grahamAnim.SetBool("isRunning", false);
         }
 
     } /* The transform method was used because the player object has a built in transform component that can be accessed without 

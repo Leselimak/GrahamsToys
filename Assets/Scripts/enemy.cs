@@ -10,8 +10,14 @@ public class enemy : MonoBehaviour
     private bool movingRight = true;
 
     public Transform groundDetection;
+    private SpriteRenderer enemySprite;
+    private Animator enemyAnim;
 
-
+    void Start()
+    {
+        enemySprite = GetComponent<SpriteRenderer>();
+        enemyAnim = GetComponent<Animator>();
+    }
 
 
 
@@ -27,11 +33,15 @@ public class enemy : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 movingRight = false; //Enemy patrols and turns around at the edge of the platform
+                enemySprite.flipX = false;
+                enemyAnim.SetBool("isWalking", true);
             }
             /*else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true; // Enemy just keeps patrolling
+                enemySprite.flipX = true;
+                enemyAnim.SetBool("isWalking", false);
             }*/
         }
 
