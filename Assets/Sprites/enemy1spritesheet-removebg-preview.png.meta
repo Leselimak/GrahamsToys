@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 7ebe3ea50e08ece4088c4e5ddbc54807
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6016679822701384425
+    second: enemy1spritesheet-removebg-preview_0
+  - first:
+      213: -8307490827197592045
+    second: enemy1spritesheet-removebg-preview_1
+  - first:
+      213: -2461486557708727064
+    second: enemy1spritesheet-removebg-preview_2
+  - first:
+      213: -831547932433420697
+    second: enemy1spritesheet-removebg-preview_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +87,105 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: enemy1spritesheet-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 187.5
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71daf983495708ca0800000000000000
+      internalID: -6016679822701384425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1spritesheet-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 333
+        width: 187.5
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e421e8b1dd5bc80800000000000000
+      internalID: -8307490827197592045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1spritesheet-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 187.5
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec4f5c640b07ddd0800000000000000
+      internalID: -2461486557708727064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1spritesheet-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 187.5
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e6899af8fb574f0800000000000000
+      internalID: -831547932433420697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
