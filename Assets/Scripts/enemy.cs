@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class enemy : MonoBehaviour
 {
+
     public float speed;
 
     bool movingRight = true;

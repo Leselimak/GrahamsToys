@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
+    public float FireRate = 2.5f;
+
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
+    public GameObject cloneBullet;
+    public Transform player;
+    float timeTillFire;
     bool aPressed, sPressed, dPressed, spacePressed; // input booleans to check when buttons are being engaged.
 
     float Speed = 15f; // movement speed float. This number can be anything but 15 seems to work well for the purpose of this assignment.
@@ -63,11 +71,13 @@ public class movement : MonoBehaviour
     void Update()
     {
         KeyboardInput(); // calling the KeyboardInput Method, once per frame because these inputs must be checked every second. 
+        Shoot();
     }
 
     void FixedUpdate() // To be checked or called upon once per frame but this method is specifically for functions that make use of physics
     {
         Move(); // calling the Move method.
+        timeTillFire = Time.fixedDeltaTime + FireRate;
     }
 
 
@@ -131,4 +141,21 @@ public class movement : MonoBehaviour
          computers so as to keep the player object from jittering or moving to fast. Time.fixedDeltaTime takes the reference of time from 
          most previous FixedUpdate call as opposed to time.deltaTime where time references can vary between frames. */
 
+    public void Shoot()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    { 
+        if(other.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("SampleScene");
+        }
+        
+    }
 }
