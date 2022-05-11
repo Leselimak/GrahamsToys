@@ -72,6 +72,10 @@ public class movement : MonoBehaviour
     {
         KeyboardInput(); // calling the KeyboardInput Method, once per frame because these inputs must be checked every second. 
         Shoot();
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     void FixedUpdate() // To be checked or called upon once per frame but this method is specifically for functions that make use of physics
