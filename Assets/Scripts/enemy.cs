@@ -7,7 +7,7 @@ public class enemy : MonoBehaviour
 {
     public float speed;
 
-    private bool movingRight = true;
+    bool movingRight = true;
 
     public Transform groundDetection;
     private SpriteRenderer enemySprite;
@@ -27,7 +27,7 @@ public class enemy : MonoBehaviour
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 2f); // Raycast send laser downwards and detects edge from the point of origin which is a empty game object.
 
-        if (groundInfo.collider == false)
+        /*if (groundInfo.collider == false)
         {
             if (movingRight == true)
             {
@@ -36,15 +36,48 @@ public class enemy : MonoBehaviour
                 enemySprite.flipX = false;
                 enemyAnim.SetBool("isWalking", true);
             }
-            /*else
+            else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true; // Enemy just keeps patrolling
                 enemySprite.flipX = true;
                 enemyAnim.SetBool("isWalking", false);
-            }*/
-        }
+            }
+        }*/
 
+       
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        /* if (other.gameObject.tag == "Wall")
+         {
+             print("collision");
+             transform.Translate(Vector2.left * speed * Time.deltaTime);
+         }
+
+         else if (other.gameObject.tag == "Ground")
+         {
+             transform.Translate(Vector2.right * speed * Time.deltaTime);
+         }
+         else
+         {
+             transform.Translate(Vector2.right * speed * Time.deltaTime);
+         }*/
+        if (other.gameObject.tag == "Wall")
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);
+           // movingRight = false; //Enemy patrols and turns around at the edge of the platform
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            //movingRight = true; // Enemy just keeps patrolling
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -54,4 +87,19 @@ public class enemy : MonoBehaviour
             SceneManager.LoadScene("SampleScene");
         }
     } // Enemy collides with player and the player respawns.
+
+   
+
+    /*void OnTriggerStay(Collider other)
+      {
+            if(groundDetection.gameObject.tag == "Ground")
+          {
+              transform.eulerAngles = new Vector3(0, 0, 0);
+
+          }
+          else
+          {
+              transform.eulerAngles = new Vector3(0, -180, 0);
+          }
+      }*/
 }
