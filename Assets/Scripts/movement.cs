@@ -63,6 +63,11 @@ public class movement : MonoBehaviour
         {
             spacePressed = false;
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     } /* accessing the player's keyboard buttons, with "GetKey(KeyCode.*)" and linking them to their respective booleans that were declared earlier.
        another effective variation of the get key is by differentiating between GetKeyUp and GetKeyDown. Sometimes a player might need that choice.*/
 
@@ -99,7 +104,7 @@ public class movement : MonoBehaviour
 
         if (dPressed)
         {
-            transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.
+            transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.k
         }
 
         if (spacePressed)

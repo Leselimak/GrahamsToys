@@ -94,6 +94,11 @@ public class enemy : MonoBehaviour
             enemySprite.flipX = true;
             enemyAnim.SetBool("isWalking", true);
         }
+
+        if(other.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

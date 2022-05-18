@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A - walk left\t\tS - crouch\nD - walk right\tE - interact\nX - gun\t\tC
+  m_text: "A - walk left\t\tS - crouch\nD - walk right\tE - interact\nK/X - gun\t\tC
     - sword\nSpace - jump\n\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
