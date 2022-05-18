@@ -79,6 +79,21 @@ public class enemy : MonoBehaviour
             enemySprite.flipX = true;
             enemyAnim.SetBool("isWalking", true);
         }
+
+        if (other.gameObject.tag == "Bed")
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            // movingRight = false; //Enemy patrols and turns around at the edge of the platform
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            //movingRight = true; // Enemy just keeps patrolling
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

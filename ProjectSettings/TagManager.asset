@@ -10,6 +10,7 @@ TagManager:
   - Door
   - Wall
   - Bullet
+  - Bed
   layers:
   - Default
   - TransparentFX

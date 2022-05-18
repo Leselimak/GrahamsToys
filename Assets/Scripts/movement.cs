@@ -160,6 +160,27 @@ public class movement : MonoBehaviour
             Destroy(this.gameObject);
             SceneManager.LoadScene("SampleScene");
         }
+
+        if(other.gameObject.tag == "Bed")
+        {
+            if (spacePressed)
+            {
+                transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
+                grahamAnim.SetBool("isJumping", true);
+            }
+            else
+            {
+                spacePressed = false;
+            }
+        }
         
     }
+
+    /*void OnTriggerEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Ladder")
+        {
+            transform.Translate(0, Speed * Time.fixedDeltaTime, 0);
+        }
+    }*/
 }
