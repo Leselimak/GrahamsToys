@@ -165,11 +165,12 @@ public class movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        /* if(other.gameObject.tag == "Enemy")
+        //respawn
+         if(other.gameObject.tag == "Enemy")
          {
              Destroy(this.gameObject);
              SceneManager.LoadScene("SampleScene");
-         }*/
+         }
 
         if (other.gameObject.tag == "Bed")
         {
@@ -184,8 +185,7 @@ public class movement : MonoBehaviour
             }
         }
 
-
-
+      
     }
 
     private void OnTriggerEnter2D(Collider2D other

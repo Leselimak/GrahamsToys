@@ -18,26 +18,30 @@ public class bullet : MonoBehaviour
     {
 
         bulletRb.AddForce(Vector2.right * bulletSpeed *Time.fixedDeltaTime, ForceMode2D.Impulse);
-       
+
+        DestroyBullet();
     }
 
-    /*void OnCollisionEnter2D(Collision other)
+    void DestroyBullet()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            
-        }*
-
-
-    }*/
+        Destroy(gameObject, 1f);
+    }
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            
+        }
 
-        if (other.gameObject.tag == "Enemy")
+        else if (other.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
+
+
     }
+
+    
 }

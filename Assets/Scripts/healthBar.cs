@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class healthBar : MonoBehaviour
 {
     private Image healthSlider;
 
-    float health = 100f;
+    float health = 5f; //total full health player has
+    float currentHealth = 5f; // current health player has
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +40,17 @@ public class healthBar : MonoBehaviour
         healthSlider.fillAmount = health / 100f;
     }
 
-    
+    void OnCollisionEnter2D(Collision2D other) //needs to be applied to enemy bullet
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            currentHealth = health - 1f; // enemy does one damage to player due to touching them
+            healthSlider.fillAmount = currentHealth / health;
+        }
+        else if (health<0){
+            Destroy(this.gameObject);            //player is dead and respawned if the have zero health
+            SceneManager.LoadScene("SampleScene");
+        }
+    }
+
 }
