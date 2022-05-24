@@ -9,8 +9,6 @@ public class movement : MonoBehaviour
 
     public Transform FirePoint;
     public GameObject BulletPrefab;
-    public GameObject cloneBullet;
-    public Transform player;
     float timeTillFire;
     bool aPressed, sPressed, dPressed, spacePressed; // input booleans to check when buttons are being engaged.
 
@@ -19,12 +17,15 @@ public class movement : MonoBehaviour
     Rigidbody2D playerRB; // referencing the Rigidbody and declaring that it is going to be used in a variable called "playerRB".
     private SpriteRenderer grahamSprite;
     private Animator grahamAnim;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>(); // accessing the Rigidbody on the player.
         grahamSprite = GetComponent<SpriteRenderer>();
         grahamAnim = GetComponent<Animator>();
+       
     }
 
     void KeyboardInput()
@@ -33,6 +34,7 @@ public class movement : MonoBehaviour
         {
             aPressed = true;
             grahamSprite.flipX = true;
+           
         }
         else
         {
@@ -50,6 +52,7 @@ public class movement : MonoBehaviour
         {
             dPressed = true;
             grahamSprite.flipX = false;
+            
         }
         else
         {
@@ -95,6 +98,8 @@ public class movement : MonoBehaviour
         if (aPressed)
         {
             transform.Translate(-Speed * Time.fixedDeltaTime, 0, 0); // move left hence the negative x-value.
+           
+
         }
 
         if (sPressed)
@@ -105,36 +110,36 @@ public class movement : MonoBehaviour
         if (dPressed)
         {
             transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.k
+                      
         }
 
         if (spacePressed)
         {
             transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
-            grahamAnim.SetBool("isJumping", true);
+      
         }
         else
         {
-            grahamAnim.SetBool("isJumping", false);
+           
         }
 
         if (!aPressed && !dPressed && !spacePressed && !sPressed)
             
         {
-            grahamAnim.SetBool("isIdle", true);
+            
+           
         }
         else
         {
-            grahamAnim.SetBool("isIdle", false);
+          
+
         }
 
-        if(aPressed || dPressed)
+       if(aPressed || dPressed)
         {
-            grahamAnim.SetBool("isRunning", true);
+           
         }
-        else
-        {
-            grahamAnim.SetBool("isRunning", false);
-        }
+      
 
     } /* The transform method was used because the player object has a built in transform component that can be accessed without 
          having to reference it first as was the case with the Rigibody. The component is accessed and then the Translate function is
@@ -178,14 +183,17 @@ public class movement : MonoBehaviour
                 spacePressed = false;
             }
         }
-        
+
+
+
     }
 
-    /*void OnTriggerEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other
+        )
     {
-        if(other.gameObject.tag == "Ladder")
+        if (other.gameObject.tag == "Collectible")
         {
-            transform.Translate(0, Speed * Time.fixedDeltaTime, 0);
-        }
-    }*/
+            Destroy(other.gameObject);
+        } 
+}
 }

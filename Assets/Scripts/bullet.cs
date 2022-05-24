@@ -16,8 +16,9 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         bulletRb.AddForce(Vector2.right * bulletSpeed *Time.fixedDeltaTime, ForceMode2D.Impulse);
-        bulletRb.AddForce(Vector2.right * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+       
     }
 
     /*void OnCollisionEnter2D(Collision other)
