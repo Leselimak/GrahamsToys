@@ -13,6 +13,6 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(transform.position, Vector2.up, 50 * Time.deltaTime);  
+        transform.RotateAround(transform.position, Vector2.up, 85 * Time.deltaTime);  
     }
 }

@@ -164,14 +164,14 @@ public class movement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other)
-    { 
-        if(other.gameObject.tag == "Enemy")
-        {
-            Destroy(this.gameObject);
-            SceneManager.LoadScene("SampleScene");
-        }
+    {
+        /* if(other.gameObject.tag == "Enemy")
+         {
+             Destroy(this.gameObject);
+             SceneManager.LoadScene("SampleScene");
+         }*/
 
-        if(other.gameObject.tag == "Bed")
+        if (other.gameObject.tag == "Bed")
         {
             if (spacePressed)
             {
