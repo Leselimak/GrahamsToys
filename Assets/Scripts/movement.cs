@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
@@ -16,15 +17,24 @@ public class movement : MonoBehaviour
 
     Rigidbody2D playerRB; // referencing the Rigidbody and declaring that it is going to be used in a variable called "playerRB".
     private SpriteRenderer grahamSprite;
-    private Animator grahamAnim;
-
+    public Animator animGraham;
     
+    //public Slider healthBar;
+
+    public int maxHealth=5;
+    public int currentHealth;
+
+    public playerHealth healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>(); // accessing the Rigidbody on the player.
         grahamSprite = GetComponent<SpriteRenderer>();
-        grahamAnim = GetComponent<Animator>();
+       
+
+        currentHealth = maxHealth;
+        healthBar.setMaxHealth(maxHealth);
        
     }
 
@@ -84,6 +94,8 @@ public class movement : MonoBehaviour
         {
             Application.Quit();
         }
+
+        
     }
 
     void FixedUpdate() // To be checked or called upon once per frame but this method is specifically for functions that make use of physics
@@ -98,9 +110,17 @@ public class movement : MonoBehaviour
         if (aPressed)
         {
             transform.Translate(-Speed * Time.fixedDeltaTime, 0, 0); // move left hence the negative x-value.
+            animGraham.SetFloat("Speed", 0.5f);
+            
+        }
+
+       /* else
+        {
+            animGraham.SetBool("isRunning", false);
+        }*/
            
 
-        }
+        
 
         if (sPressed)
         {
@@ -109,25 +129,38 @@ public class movement : MonoBehaviour
 
         if (dPressed)
         {
-            transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.k
-                      
+            transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.
+            animGraham.SetFloat("Speed", 0.5f);
+            
+
         }
+
+
+        else
+        {
+            animGraham.SetFloat("Speed", 0f);
+        }
+
+        
 
         if (spacePressed)
         {
             transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
-      
+            animGraham.SetBool("isJumping", true);
+           
+
         }
         else
         {
-           
+            animGraham.SetBool("isJumping", false);
         }
 
         if (!aPressed && !dPressed && !spacePressed && !sPressed)
             
         {
-            
-           
+            animGraham.SetFloat("Speed", 0f);
+          
+
         }
         else
         {
@@ -137,7 +170,14 @@ public class movement : MonoBehaviour
 
        if(aPressed || dPressed)
         {
-           
+            animGraham.SetFloat("Speed", 0.5f);
+            
+        }
+
+        else
+        {
+            animGraham.SetFloat("Speed", 0f);
+
         }
       
 
@@ -160,24 +200,42 @@ public class movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
+            animGraham.SetBool("isShooting", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.K))
+        {
+            animGraham.SetBool("isShooting", false);
         }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        //respawn
+        //take damage
          if(other.gameObject.tag == "Enemy")
          {
-             Destroy(this.gameObject);
-             SceneManager.LoadScene("SampleScene");
-         }
+            //healthBar.value -= 0.5f;
+            //Destroy(this.gameObject);
+            // SceneManager.LoadScene("SampleScene");
+            takeDamage(1);
+         } 
+        if (currentHealth == 0)
+            {
+            Destroy(this.gameObject);
+            SceneManager.LoadScene("SampleScene");
+            }
+
+        void takeDamage(int damage)
+        {
+            currentHealth -= damage;
+            healthBar.setHealth(currentHealth);
+        }
 
         if (other.gameObject.tag == "Bed")
         {
             if (spacePressed)
             {
                 transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
-                grahamAnim.SetBool("isJumping", true);
+                
             }
             else
             {
@@ -185,7 +243,6 @@ public class movement : MonoBehaviour
             }
         }
 
-      
     }
 
     private void OnTriggerEnter2D(Collider2D other

@@ -17,7 +17,14 @@ public class bullet : MonoBehaviour
     void Update()
     {
 
-        bulletRb.AddForce(Vector2.right * bulletSpeed *Time.fixedDeltaTime, ForceMode2D.Impulse);
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            bulletRb.AddForce(Vector2.right * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            bulletRb.AddForce(Vector2.left * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        }
 
         DestroyBullet();
     }
@@ -29,17 +36,16 @@ public class bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
+       /* if (other.gameObject.tag == "Player")
         {
-            Destroy(other.gameObject);
+            Destroy(this.gameObject);
             
-        }
+        }*/
 
-        else if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
-
 
     }
 

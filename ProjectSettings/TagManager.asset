@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Bed
   - Collectible
+  - Heart
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ public class enemy : MonoBehaviour
         enemySprite = GetComponent<SpriteRenderer>();
         enemyAnim = GetComponent<Animator>();
        // EnemyRb = GetComponent<Rigidbody2D>();
-      //  seekr = GetComponent<Seeker>();
+      
 
        
 

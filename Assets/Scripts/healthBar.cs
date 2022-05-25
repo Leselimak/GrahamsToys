@@ -8,8 +8,8 @@ public class healthBar : MonoBehaviour
 {
     private Image healthSlider;
 
-    float health = 5f; //total full health player has
-    float currentHealth = 5f; // current health player has
+    float health = 100f; //total full health player has
+    float currentHealth = 100f; // current health player has
     // Start is called before the first frame update
     void Start()
     {
