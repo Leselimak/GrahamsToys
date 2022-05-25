@@ -17,14 +17,9 @@ public class bullet : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            bulletRb.AddForce(Vector2.right * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            bulletRb.AddForce(Vector2.left * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-        }
+       bulletRb.AddForce(Vector2.right * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        
+       
 
         DestroyBullet();
     }
