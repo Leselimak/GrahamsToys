@@ -10,6 +10,7 @@ public class movement : MonoBehaviour
 
     public Transform FirePoint;
     public GameObject BulletPrefab;
+    public GameObject Bullet2;
     float timeTillFire;
     bool aPressed, sPressed, dPressed, spacePressed; // input booleans to check when buttons are being engaged.
 
@@ -26,6 +27,12 @@ public class movement : MonoBehaviour
 
     public playerHealth healthBar;
 
+    public AudioSource RunSound;
+    public AudioSource CollectibleSound;
+    public AudioSource ShootSound;
+    public AudioSource JumpSound;
+    public AudioSource backGroundMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,15 +47,17 @@ public class movement : MonoBehaviour
 
     void KeyboardInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
+            RunSound.Play();
             aPressed = true;
             grahamSprite.flipX = true;
            
         }
-        else
+        if(Input.GetKeyUp(KeyCode.A))
         {
             aPressed = false;
+            grahamSprite.flipX = false;
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -58,15 +67,19 @@ public class movement : MonoBehaviour
         {
             sPressed = false;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
+            RunSound.Play();
             dPressed = true;
             grahamSprite.flipX = false;
             
         }
-        else
+        if (Input.GetKeyUp(KeyCode.D))
         {
+            
             dPressed = false;
+            grahamSprite.flipX = false;
+
         }
         if (Input.GetKey(KeyCode.Space))
         {
@@ -109,6 +122,7 @@ public class movement : MonoBehaviour
     {
         if (aPressed)
         {
+         
             transform.Translate(-Speed * Time.fixedDeltaTime, 0, 0); // move left hence the negative x-value.
             animGraham.SetFloat("Speed", 0.5f);
             
@@ -129,6 +143,7 @@ public class movement : MonoBehaviour
 
         if (dPressed)
         {
+        
             transform.Translate(Speed * Time.fixedDeltaTime, 0, 0);// move right.
             animGraham.SetFloat("Speed", 0.5f);
             
@@ -145,6 +160,7 @@ public class movement : MonoBehaviour
 
         if (spacePressed)
         {
+            JumpSound.Play();
             transform.Translate(0, Speed * Time.fixedDeltaTime, 0);// move up.
             animGraham.SetBool("isJumping", true);
            
@@ -170,6 +186,7 @@ public class movement : MonoBehaviour
 
        if(aPressed || dPressed)
         {
+            
             animGraham.SetFloat("Speed", 0.5f);
             
         }
@@ -199,11 +216,25 @@ public class movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
+            ShootSound.Play();
             Instantiate(BulletPrefab, FirePoint.position, Quaternion.identity);
             animGraham.SetBool("isShooting", true);
         }
         else if (Input.GetKeyUp(KeyCode.K))
         {
+            animGraham.SetBool("isShooting", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            ShootSound.Play();
+            Instantiate(Bullet2, FirePoint.position, Quaternion.identity);
+            animGraham.SetBool("isShooting", true);
+            grahamSprite.flipX = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.J))
+        {
+            grahamSprite.flipX = false;
             animGraham.SetBool("isShooting", false);
         }
     }
@@ -221,8 +252,13 @@ public class movement : MonoBehaviour
         if (currentHealth == 0)
             {
             Destroy(this.gameObject);
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("GameOverMenu");
             }
+
+       /* if(other.gameObject.tag == "Ethan")
+        {
+            SceneManager.LoadScene("WinScreen");
+        }*/
 
         void takeDamage(int damage)
         {
@@ -245,12 +281,20 @@ public class movement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other
-        )
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Collectible")
         {
+            CollectibleSound.Play();
             Destroy(other.gameObject);
-        } 
-}
+        }
+
+        if (other.gameObject.tag == "Ethan")
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                SceneManager.LoadScene("WinScreen");
+            }
+        }
+    }
 }

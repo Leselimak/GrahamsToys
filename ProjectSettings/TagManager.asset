@@ -13,6 +13,7 @@ TagManager:
   - Bed
   - Collectible
   - Heart
+  - Ethan
   layers:
   - Default
   - TransparentFX

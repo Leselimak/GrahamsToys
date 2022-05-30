@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class bullet2 : MonoBehaviour
 {
-    Rigidbody2D bulletRb;
+
+    Rigidbody2D bulletRB;
     float bulletSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletRb = gameObject.GetComponent<Rigidbody2D>();
+        bulletRB = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //bulletRb.AddForce(Vector2.right * bulletSpeed * Time.fixedDeltaTime, ForceMode2D.Impulse);
-
-        transform.position += transform.right * Time.fixedDeltaTime * bulletSpeed;
-        
+        transform.position += - transform.right * Time.fixedDeltaTime * bulletSpeed;
         DestroyBullet();
     }
 
@@ -31,18 +28,11 @@ public class bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-       /* if (other.gameObject.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            
-        }*/
-
+     
         if (other.gameObject.tag == "Enemy")
         {
             Destroy(this.gameObject);
         }
 
     }
-
-    
 }

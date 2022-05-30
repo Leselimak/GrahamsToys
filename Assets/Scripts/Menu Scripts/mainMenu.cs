@@ -27,4 +27,10 @@ public class mainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("StartMenu");
     }
+
+    //Win Menu
+    public void WinMenu()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
 }
