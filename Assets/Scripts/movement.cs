@@ -279,6 +279,11 @@ public class movement : MonoBehaviour
             }
         }
 
+        if(other.gameObject.tag == "LvlLoader")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

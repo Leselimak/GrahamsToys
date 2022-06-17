@@ -8,7 +8,7 @@ public class mainMenu : MonoBehaviour
     //StartMenu Buttons
     public void StartGame() //StartMenu  button
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void controlMenu() //StartMenu button
