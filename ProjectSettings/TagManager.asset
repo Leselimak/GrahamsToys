@@ -15,6 +15,7 @@ TagManager:
   - Heart
   - Ethan
   - LvlLoader
+  - Chair
   layers:
   - Default
   - TransparentFX

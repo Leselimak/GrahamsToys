@@ -33,4 +33,28 @@ public class mainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("WinScreen");
     }
+
+    public void BossFight()
+    {
+        SceneManager.LoadScene("BossFight");
+    }
+
+    /*public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }*/
+
+    public void StoryOne()
+    {
+        SceneManager.LoadScene("StoryOne");
+    }
+
+    public void LvlOne()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    
+        
+    
 }

@@ -82,15 +82,40 @@ public class enemy : MonoBehaviour
         {
             enemyAnim.SetBool("isDying", false);
         }
+        if (other.gameObject.tag == "Chair")
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
+
+        if (other.gameObject.tag == "Door")
+        {
+            transform.eulerAngles = new Vector3(0, -180, 0);
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            enemySprite.flipX = true;
+            enemyAnim.SetBool("isWalking", true);
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene("SampleScene");
         }
-    } // Enemy collides with player and the player respawns.
+    } // Enemy collides with player and the player respawns.*/
 
    
 

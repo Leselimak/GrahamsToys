@@ -281,7 +281,7 @@ public class movement : MonoBehaviour
 
         if(other.gameObject.tag == "LvlLoader")
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("StoryTwo");
         }
 
     }
