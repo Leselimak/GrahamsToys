@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: 4b7a1bc20769a05408ce1bae19d370e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5784557259545180886
+    second: GrahamSpriteSheet_0
+  - first:
+      213: -8058881946973776868
+    second: GrahamSpriteSheet_1
+  - first:
+      213: 1557081657889936304
+    second: GrahamSpriteSheet_2
+  - first:
+      213: 9050616134484555872
+    second: GrahamSpriteSheet_3
+  - first:
+      213: -2400159496970131766
+    second: GrahamSpriteSheet_4
+  - first:
+      213: 4828932644205706199
+    second: GrahamSpriteSheet_5
+  - first:
+      213: -8577450367807459260
+    second: GrahamSpriteSheet_6
+  - first:
+      213: -8788504674591988002
+    second: GrahamSpriteSheet_7
+  - first:
+      213: 3355602378136619740
+    second: GrahamSpriteSheet_8
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6666.667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2507e102df19bfa0800000000000000
+      internalID: -5784557259545180886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 6666.667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14d1d72199192090800000000000000
+      internalID: -8058881946973776868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 6666.667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b35ec0a48ddb9510800000000000000
+      internalID: 1557081657889936304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 6666.667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068fe5e0c6f3a9d70800000000000000
+      internalID: 9050616134484555872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3333.6667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6a0d277abe0bed0800000000000000
+      internalID: -2400159496970131766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3333.6667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db3b26b7a0d30340800000000000000
+      internalID: 4828932644205706199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3333.6667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440fa44f556c6f880800000000000000
+      internalID: -8577450367807459260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3333.6667
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6a51cdf85f80680800000000000000
+      internalID: -8788504674591988002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrahamSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 1920
+        height: 3333.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda0a4c859e719e20800000000000000
+      internalID: 3355602378136619740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

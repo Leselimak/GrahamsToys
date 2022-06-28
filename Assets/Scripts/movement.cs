@@ -9,6 +9,7 @@ public class movement : MonoBehaviour
     public float FireRate = 2.5f;
 
     public Transform FirePoint;
+    public Transform FirePoint2;
     public GameObject BulletPrefab;
     public GameObject Bullet2;
     float timeTillFire;
@@ -228,7 +229,7 @@ public class movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             ShootSound.Play();
-            Instantiate(Bullet2, FirePoint.position, Quaternion.identity);
+            Instantiate(Bullet2, FirePoint2.position, Quaternion.identity);
             animGraham.SetBool("isShooting", true);
             grahamSprite.flipX = true;
         }
@@ -255,6 +256,11 @@ public class movement : MonoBehaviour
             SceneManager.LoadScene("GameOverMenu");
             }
 
+        if(other.gameObject.tag == "BossBullet")
+        {
+            takeDamage(1);
+        }
+
        /* if(other.gameObject.tag == "Ethan")
         {
             SceneManager.LoadScene("WinScreen");
@@ -279,10 +285,10 @@ public class movement : MonoBehaviour
             }
         }
 
-        if(other.gameObject.tag == "LvlLoader")
+        /*if(other.gameObject.tag == "LvlLoader")
         {
             SceneManager.LoadScene("StoryTwo");
-        }
+        }*/
 
     }
 
@@ -300,6 +306,11 @@ public class movement : MonoBehaviour
             {
                 SceneManager.LoadScene("WinScreen");
             }
+        }
+
+        if (other.gameObject.tag == "LvlLoader")
+        {
+            SceneManager.LoadScene("StoryTwo");
         }
     }
 }

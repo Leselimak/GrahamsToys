@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoryOne.unity
     guid: 0125db32c6a985c46843d28977842d1b
+  - enabled: 1
+    path: Assets/Scenes/StoryTwo.unity
+    guid: 9486de0452ef21a46b8130cbdf82cfe5
+  - enabled: 1
+    path: Assets/Scenes/StoryThree.unity
+    guid: bc2096eb811ee424f964c0d802585900
   m_configObjects: {}
